@@ -1,0 +1,8 @@
+<meta content="article" property="og:type"/>
+<meta content="{{post.record.text}}" property="og:description"/>
+<meta content="{{post.author.displayName}} (@{{post.author.handle}})" property="og:title" />
+<meta content="https://bsky.app/profile/{{post.author.handle}}/post/{{post.uri.split('/')[-1]}}" property="og:url"/>
+{% if post.embed.images %}
+<meta content="summary_large_image" name="twitter:card" />
+<meta content="{{post.embed.images[0].thumb}}" property="og:image"/>
+{% endif %}
