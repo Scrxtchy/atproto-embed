@@ -26,7 +26,7 @@ app = Flask(__name__)
 def displayPost(url=None):
 	if url:
 		if 'bot' not in request.headers['User-Agent'].lower():
-			return redirect(f"https://bsky.app/profile/{url}")
+			return redirect(f"https://bsky.app/profile/{url.replace('profile/','')}")
 		else:
 			return render_template('post.html', post=getPost(url))
 	else:
